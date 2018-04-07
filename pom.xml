@@ -22,4 +22,44 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+	<plugin>
+       	<groupId>ord.codehaus.mojo</groupId>
+       	<artifactId>sonar-maven-plugin</artifactId> 
+       	<version>2.2</version>
+    </plugin>
+	
+	<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.7</version>
+			<configuration>
+				<formats>
+					<format>xml</format>
+				</formats>
+				<aggregate>true</aggregate>
+			</configuration>
+	</plugin>
+    <plugin>        
+        <groupId>org.apache.tomcat.maven</groupId>        
+        <artifactId>tomcat7-maven-plugin</artifactId>        
+        <version>2.2</version>        
+        <configuration>          
+          <url>http://localhost:8083/manager/text</url>          
+          <server>tomcatserver</server>          
+          <path>/ebay</path>
+        </configuration>
+      </plugin>
+
+
+
+
+
+
+
+
+
+</plugins>
+  </build>
 </project>
